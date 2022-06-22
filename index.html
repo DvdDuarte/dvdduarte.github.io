@@ -7,7 +7,18 @@
 </head>
 <body>
 
-    <p>Hello World</p>
+    <p>Hello World</p> 
+
+    <script>
+        $('body').terminal({
+            hello: function(what) {
+                this.echo('Hello, ' + what +
+                          '. Wellcome to this terminal.');
+            }
+        }, {
+            greetings: 'My First Web Terminal'
+        });
+    </script>
 
 </body>
 </html>
