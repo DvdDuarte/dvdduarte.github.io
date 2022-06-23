@@ -75,7 +75,7 @@ async function getInputValue(){
   else if(value.toLowerCase() === "whois"){
     trueValue(value);
     createImg("resources/photo.png");
-    createText("DvdDuarte is a recently graduated software engineer from University of Uminho.")
+    createText("DvdDuarte is a recently graduated software engineer from University of Minho.")
     createText("My real name Is David Duarte. I'm most passion about <span class='bright_green'>web3</span> and <span class='bright_green'>game development</span>.")
     createText("At the moment I'm learning <span class='bright_green'> Rust</span>. I'm also developing a personal project at the moment.")
   }
