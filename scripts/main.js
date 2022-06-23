@@ -63,48 +63,52 @@ async function getInputValue(){
 
   if(value.toLowerCase() === "help"){
     trueValue(value);
-    
     createCode("help", "See all the commands");
     createCode("whois", "Who is DvdDuarte?");
+    createCode("skills", "What are my skills?");
+    createCode("languages", "Languages I know");
     createCode("resume", "My Curriculum Vitæ. In english and in portuguese.");
     createCode("projects", "My github page with my projects. Follow me there!");
     createCode("social -a", "All my social networks.");
     createCode("clear", "Clean the terminal.");
-    
-  }
-  
-  else if(value.toLowerCase() === "whois"){
+  } else if(value.toLowerCase() === "whois"){
     trueValue(value);
     createImg("resources/photo.png");
     createText("DvdDuarte is a recently graduated software engineer from University of Minho.")
     createText("My real name Is David Duarte. I'm most passion about <span class='bright_green'>web3</span> and <span class='bright_green'>game development</span>.")
     createText("At the moment I'm learning <span class='bright_green'> Rust</span>. I'm also developing a personal project at the moment.")
-  }
-  else if(value.toLowerCase() === "resume"){
+  } else if(value.toLowerCase() === "skills"){
+    trueValue(value);
+    createCode("Programming","C, C++, Java, Javascript, Python, Rust, Haskell, Prolog");
+    createCode("Web Dev", "Html, CSS");
+    createCode("Technologies", "Git, Docker, Visual Studio (Code), Intellij, Unix, MySQL, Visual Paradigm, Knime, Matlab, Windows");
+    createCode("Technologies from the User Perspective", " Office 365, Google Apps, Windows, Facebook, Instagram");
+  } else if(value.toLowerCase() === "languages"){
+    trueValue(value);
+    createCode("Portuguese","Native Speaker");
+    createCode("English", "B1/B2 (self-rated)");
+    createCode("Spanish", "A1/A2 (self-rated)");
+  } else if(value.toLowerCase() === "resume"){
     trueValue(value);
     createText("<a href='https://github.com/DvdDuarte/CV' target='_blank'><i class='fab fa-github white'></i> Curriculum Vitæ</a>")
-  }
-  else if(value.toLowerCase() === "projects"){
+  } else if(value.toLowerCase() === "projects"){
     trueValue(value);
     createText("<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/University.md#projects' target='_blank'><i class='fab fa-github white'></i> Github Projects</a>")
-  }
-  else if(value.toLowerCase() === "social -a"){
+  } else if(value.toLowerCase() === "social -a"){
     trueValue(value);
-    createText("<a href='https://github.com/DvdDuarte' target='_blank'><i class='fab fa-github white'></i> github.com/DvdDuarte</a>")
-    createText("<a href='https://www.linkedin.com/in/dvdduarte/' target='_blank'><i class='fab fa-linkedin-in white'></i> linkedin.com/in/dvdduarte</a>")
-    createText("<a href='https://www.instagram.com/_dvd_duarte_/' target='_blank'><i class='fab fa-instagram white'></i> instagram.com/_dvd_duarte_</a>")
-  }
-  else if(value.toLowerCase() === "social"){
+    createText("<a href='https://github.com/DvdDuarte' target='_blank'><i class='fab fa-github white'></i> github.com/DvdDuarte</a>");
+    createText("<a href='https://www.linkedin.com/in/dvdduarte/' target='_blank'><i class='fab fa-linkedin-in white'></i> linkedin.com/in/dvdduarte</a>");
+    createText("<a href='https://www.instagram.com/_dvd_duarte_/' target='_blank'><i class='fab fa-instagram white'></i> instagram.com/_dvd_duarte_</a>");
+    createText("<a href='cdvdfduarte@gmail.com' target='_blank'><i class='fa fa-envelope white'></i> email</a>");
+  } else if(value.toLowerCase() === "social"){
     trueValue(value);
     createText("Did you mean: social -a?")
-  }
-  else if(value.toLowerCase() === "clear"){
+  } else if(value.toLowerCase() === "clear"){
     document.querySelectorAll("img"). forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
     showBanner();
-  }
-  else{
+  } else{
     falseValue(value);
     createText(`command not found: ${value}`)
   }
