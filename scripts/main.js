@@ -73,12 +73,11 @@ async function getInputValue(){
   }
   
   else if(value.toLowerCase() === "whois"){
-    createWhoIs();
-    // trueValue(value);
-    // createImg("resources/photo.png");
-    // createText("DvdDuarte is a recently graduated software engineer from University of Minho.")
-    // createText("My real name Is David Duarte. I'm most passion about <span class='bright_green'>web3</span> and <span class='bright_green'>game development</span>.")
-    // createText("At the moment I'm learning <span class='bright_green'> Rust</span>. I'm also developing a personal project at the moment.")
+    trueValue(value);
+    createImg("resources/photo.png");
+    createText("DvdDuarte is a recently graduated software engineer from University of Minho.")
+    createText("My real name Is David Duarte. I'm most passion about <span class='bright_green'>web3</span> and <span class='bright_green'>game development</span>.")
+    createText("At the moment I'm learning <span class='bright_green'> Rust</span>. I'm also developing a personal project at the moment.")
   }
   else if(value.toLowerCase() === "resume"){
     trueValue(value);
@@ -160,20 +159,4 @@ function createImg(path){
   app.appendChild(img);
 }
 
-function createWhoIs(){
-  const div = document.createElement("div");
-  div.setAttribute("class", "whois")
-  var img = document.createElement("img");
-  img.setAttribute("class","profilepic");
-  img.setAttribute("src","resources/photo.png");
-  img.setAttribute("alt","Profile Photo");
-
-  const text = document.createElement("p");
-  p.innerHTML = "DvdDuarte is a recently graduated software engineer from University of Minho.<br/> My real name Is David Duarte.<br/> I'm most passion about <span class='bright_green'>web3</span> and <span class='bright_green'>game development</span>.<br/> At the moment I'm learning <span class='bright_green'> Rust</span>. I'm also developing a personal project at the moment."
-
-  div.appendChild(img);
-  div.appendChild(text);
-  app.appendChild(div);
-}
- 
 open_terminal();
