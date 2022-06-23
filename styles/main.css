@@ -30,6 +30,12 @@
 .blue{
   color:#9CEAF3;
 }
+.bright_green{
+  color:#47D043;
+}
+.bright_yellow{
+  color:#e5ff00;
+}
 a{
   text-decoration: none;
   color: rgb(238, 238, 238);
@@ -181,4 +187,9 @@ input:focus{
 
 .icone.error{
   color:#F78F85;
+}
+.profilepic{
+  width: 15%;
+  max-width: 100%;
+  height: auto;
 }

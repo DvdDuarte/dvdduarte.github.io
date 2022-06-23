@@ -21,12 +21,12 @@ app.addEventListener("click", function(event){
 
 async function open_terminal(){
   createText("Welcome");
-  await delay(700);
+  // await delay(700);
   createText("Starting the server...");
-  await delay(1500);
+  // await delay(1500);
   createText("You can run several commands. Type: 'help'");
   createCode("'help'", "To see all the commands");
-  await delay(500);
+  // await delay(500);
   new_line();
 }
 
@@ -60,7 +60,8 @@ function removeInput(){
 async function getInputValue(){
   
   const value = document.querySelector("input").value;
-  if(value === "help"){
+
+  if(value.toLowerCase() === "help"){
     trueValue(value);
     
     createCode("whois", "Who is DvdDuarte?");
@@ -71,34 +72,32 @@ async function getInputValue(){
     
   }
   
-  else if(value === "whois"){
+  else if(value.toLowerCase() === "whois"){
     trueValue(value);
-    createImg("../resources/photo.png");
+    createImg("resources/photo.png");
     createText("DvdDuarte is a recently graduated software engineer from University of Uminho.")
-    createText("My real name Is David Duarte. I'm most passion about <span class='blue'>web3</span> and <span class='blue'>game development</span>.")
-    createText("At the moment I'm learning <span class='blue'> Rust, C#</span> and developing a personal project.")
+    createText("My real name Is David Duarte. I'm most passion about <span class='bright_green'>web3</span> and <span class='bright_green'>game development</span>.")
+    createText("At the moment I'm learning <span class='bright_green'> Rust</span>. I'm also developing a personal project at the moment.")
   }
-  else if(value === "resume"){
+  else if(value.toLowerCase() === "resume"){
     trueValue(value);
     createText("<a href='https://github.com/DvdDuarte/CV' target='_blank'><i class='fab fa-github white'></i> Curriculum Vitæ</a>")
   }
-  else if(value === "projects"){
+  else if(value.toLowerCase() === "projects"){
     trueValue(value);
     createText("<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/University.md#projects' target='_blank'><i class='fab fa-github white'></i> Github Projects</a>")
   }
-  else if(value === "social -a"){
+  else if(value.toLowerCase() === "social -a"){
     trueValue(value);
     createText("<a href='https://github.com/DvdDuarte' target='_blank'><i class='fab fa-github white'></i> github.com/DvdDuarte</a>")
     createText("<a href='https://www.linkedin.com/in/dvdduarte/' target='_blank'><i class='fab fa-linkedin-in white'></i> linkedin.com/in/dvdduarte</a>")
     createText("<a href='https://www.instagram.com/_dvd_duarte_/' target='_blank'><i class='fab fa-instagram white'></i> instagram.com/_dvd_duarte_</a>")
   }
-  else if(value === "social"){
+  else if(value.toLowerCase() === "social"){
     trueValue(value);
     createText("Did you mean: social -a?")
   }
-  
-  
-  else if(value === "clear"){
+  else if(value.toLowerCase() === "clear"){
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
   }
@@ -136,7 +135,7 @@ function falseValue(value){
   app.appendChild(div);
 }
 
-function createText(text, classname){
+function createText(text){
   const p = document.createElement("p");
   
   p.innerHTML = text;
@@ -152,8 +151,11 @@ function createCode(code, text){
 }
 
 function createImg(path){
+
   var img = document.createElement("img");
-  img.src = "path"; 
+  img.setAttribute("class","profilepic");
+  img.setAttribute("src",path);
+  img.setAttribute("alt","Profile Photo");
   app.appendChild(img);
 }
 
