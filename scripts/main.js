@@ -156,6 +156,7 @@ function createImg(path){
   img.setAttribute("class","profilepic");
   img.setAttribute("src",path);
   img.setAttribute("alt","Profile Photo");
+  img.setAttribute("style","float: left");
   app.appendChild(img);
 }
 
