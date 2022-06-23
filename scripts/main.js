@@ -73,6 +73,7 @@ async function getInputValue(){
   }
   
   else if(value.toLowerCase() === "whois"){
+    createWhoIs();
     // trueValue(value);
     // createImg("resources/photo.png");
     // createText("DvdDuarte is a recently graduated software engineer from University of Minho.")
