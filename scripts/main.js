@@ -99,7 +99,7 @@ async function getInputValue(){
     createText("<a href='https://github.com/DvdDuarte' target='_blank'><i class='fab fa-github white'></i> github.com/DvdDuarte</a>");
     createText("<a href='https://www.linkedin.com/in/dvdduarte/' target='_blank'><i class='fab fa-linkedin-in white'></i> linkedin.com/in/dvdduarte</a>");
     createText("<a href='https://www.instagram.com/_dvd_duarte_/' target='_blank'><i class='fab fa-instagram white'></i> instagram.com/_dvd_duarte_</a>");
-    createText("<a href='cdvdfduarte@gmail.com' target='_blank'><i class='fa fa-envelope white'></i> email</a>");
+    createText("<a href='mailto:cdvdfduarte@gmail.com?Subject=[Portfolio] - Entrar em contacto' target='_blank'><i class='fa fa-envelope white'></i> cdvdfduarte@gmail.com</a>");
   } else if(value.toLowerCase() === "social"){
     trueValue(value);
     createText("Did you mean: social -a?")
