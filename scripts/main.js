@@ -64,20 +64,27 @@ async function getInputValue(){
     trueValue(value);
     
     createCode("whois", "Who is DvdDuarte?");
+    createCode("resume", "My Curriculum Vitæ. In english and in portuguese.");
     createCode("projects", "My github page with my projects. Follow me there!");
     createCode("social -a", "All my social networks.");
     createCode("clear", "Clean the terminal.");
     
   }
-  else if(value === "projects"){
-    trueValue(value);
-    createText("<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/University.md#projects' target='_blank'><i class='fab fa-github white'></i> Github Projects</a>")
-  }
+  
   else if(value === "whois"){
     trueValue(value);
+    createImg("../resources/photo.png");
     createText("DvdDuarte is a recently graduated software engineer from University of Uminho.")
     createText("My real name Is David Duarte. I'm most passion about <span class='blue'>web3</span> and <span class='blue'>game development</span>.")
     createText("At the moment I'm learning <span class='blue'> Rust, C#</span> and developing a personal project.")
+  }
+  else if(value === "resume"){
+    trueValue(value);
+    createText("<a href='https://github.com/DvdDuarte/CV' target='_blank'><i class='fab fa-github white'></i> Curriculum Vitæ</a>")
+  }
+  else if(value === "projects"){
+    trueValue(value);
+    createText("<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/University.md#projects' target='_blank'><i class='fab fa-github white'></i> Github Projects</a>")
   }
   else if(value === "social -a"){
     trueValue(value);
@@ -89,6 +96,7 @@ async function getInputValue(){
     trueValue(value);
     createText("Did you mean: social -a?")
   }
+  
   
   else if(value === "clear"){
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
@@ -141,6 +149,12 @@ function createCode(code, text){
   p.innerHTML =
  `${code} <br/><span class='text'> ${text} </span>`;
   app.appendChild(p);
+}
+
+function createImg(path){
+  var img = document.createElement("img");
+  img.src = "path"; 
+  app.appendChild(img);
 }
 
 open_terminal();
