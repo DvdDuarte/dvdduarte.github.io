@@ -189,7 +189,7 @@ input:focus{
   color:#F78F85;
 }
 .profilepic{
-  width: 15%;
-  max-width: 100%;
+  width: 100%;
+  max-width: 200px;
   height: auto;
 }

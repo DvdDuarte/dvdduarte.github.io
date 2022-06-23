@@ -43,7 +43,7 @@ function new_line(){
   const div = document.createElement("div");
   div.setAttribute("class", "type")
   const i = document.createElement("i");
-  i.setAttribute("class", "fas fa-angle-right icone")
+  i.setAttribute("class", "fas fa-dollar-sign icone")
   const input = document.createElement("input");
   div.appendChild(i);
   div.appendChild(input);
@@ -112,7 +112,7 @@ function trueValue(value){
   const div = document.createElement("section");
   div.setAttribute("class", "type2")
   const i = document.createElement("i");
-  i.setAttribute("class", "fas fa-angle-right icone")
+  i.setAttribute("class", "fas fa-dollar-sign icone")
   const mensagem = document.createElement("h2");
   mensagem.setAttribute("class", "sucess")
   mensagem.textContent = `${value}`;
@@ -126,7 +126,7 @@ function falseValue(value){
   const div = document.createElement("section");
   div.setAttribute("class", "type2")
   const i = document.createElement("i");
-  i.setAttribute("class", "fas fa-angle-right icone error")
+  i.setAttribute("class", "fas fa-dollar-sign icone error")
   const mensagem = document.createElement("h2");
   mensagem.setAttribute("class", "error")
   mensagem.textContent = `${value}`;
@@ -157,6 +157,10 @@ function createImg(path){
   img.setAttribute("src",path);
   img.setAttribute("alt","Profile Photo");
   app.appendChild(img);
+}
+
+function createWhoIs(){
+  
 }
 
 open_terminal();
