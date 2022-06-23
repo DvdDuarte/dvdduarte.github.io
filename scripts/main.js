@@ -21,12 +21,12 @@ app.addEventListener("click", function(event){
 
 async function open_terminal(){
   createText("Welcome");
-  // await delay(700);
+  await delay(700);
   createText("Starting the server...");
-  // await delay(1500);
-  createText("You can run several commands. Type: 'help'");
-  createCode("'help'", "To see all the commands");
-  // await delay(500);
+  await delay(1500);
+  createText("You can run several commands.");
+  createText("Type: <span class='blue'>'help'</span> To see all the commands");
+  await delay(500);
   new_line();
 }
 
@@ -64,6 +64,7 @@ async function getInputValue(){
   if(value.toLowerCase() === "help"){
     trueValue(value);
     
+    createCode("help", "See all the commands");
     createCode("whois", "Who is DvdDuarte?");
     createCode("resume", "My Curriculum Vitæ. In english and in portuguese.");
     createCode("projects", "My github page with my projects. Follow me there!");
@@ -98,8 +99,10 @@ async function getInputValue(){
     createText("Did you mean: social -a?")
   }
   else if(value.toLowerCase() === "clear"){
+    document.querySelectorAll("img"). forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
+    showBanner();
   }
   else{
     falseValue(value);
@@ -157,6 +160,10 @@ function createImg(path){
   img.setAttribute("src",path);
   img.setAttribute("alt","Profile Photo");
   app.appendChild(img);
+}
+
+function showBanner(){
+  createCode("'help'", "To see all the commands");
 }
 
 open_terminal();
