@@ -54,8 +54,8 @@ body{
   flex-direction: column;
   width:100%;
   max-width:2000px;
-  height: auto;
-  max-height: 650px;
+  height: 70%;
+  /* max-height: 70%; */
   overflow: hidden;
   border-radius: 6px;
   border: 1px solid gray;

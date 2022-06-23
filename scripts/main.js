@@ -66,7 +66,7 @@ async function getInputValue(){
     createCode("help", "See all the commands");
     createCode("whois", "Who is DvdDuarte?");
     createCode("skills", "What are my skills?");
-    createCode("languages", "Languages I know");
+    createCode("languages", "What languages do i know?");
     createCode("resume", "My Curriculum Vitæ. In english and in portuguese.");
     createCode("projects", "My github page with my projects. Follow me there!");
     createCode("social -a", "All my social networks.");
