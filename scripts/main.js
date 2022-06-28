@@ -21,12 +21,12 @@ app.addEventListener("click", function(event){
 
 async function open_terminal(){
   createText("Welcome");
-  await delay(700);
+  // await delay(700);
   createText("Starting the server...");
-  await delay(1500);
+  // await delay(1500);
   createText("You can run several commands.");
   createText("Type: <span class='blue'>'help'</span> To see all the commands");
-  await delay(500);
+  // await delay(500);
   new_line();
 }
 
@@ -73,10 +73,11 @@ async function getInputValue(){
     createCode("clear", "Clean the terminal.");
   } else if(value.toLowerCase() === "whois"){
     trueValue(value);
-    createImg("resources/photo.png");
-    createText("DvdDuarte is a recently graduated software engineer from University of Minho.")
-    createText("My real name Is David Duarte. I'm most passion about <span class='bright_green'>web3</span> and <span class='bright_green'>game development</span>.")
-    createText("At the moment I'm learning <span class='bright_green'> Rust</span>. I'm also developing a personal project at the same time.")
+    createWhoIs();
+    // createImg("resources/photo.png");
+    // createText("DvdDuarte is a recently graduated software engineer from University of Minho.")
+    // createText("My real name Is David Duarte. I'm most passion about <span class='bright_green'>web3</span> and <span class='bright_green'>game development</span>.")
+    // createText("At the moment I'm learning <span class='bright_green'> Rust</span>. I'm also developing a personal project at the same time.")
   } else if(value.toLowerCase() === "skills"){
     trueValue(value);
     createCode("Programming","C, C++, Java, Javascript, Python, Rust, Haskell, Prolog");
@@ -162,8 +163,24 @@ function createImg(path){
   var img = document.createElement("img");
   img.setAttribute("class","profilepic");
   img.setAttribute("src",path);
+  img.setAttribute("align","left");
   img.setAttribute("alt","Profile Photo");
   app.appendChild(img);
+}
+
+function createWhoIs(){
+  const div = document.createElement("div");
+  var img = document.createElement("img");
+  img.setAttribute("class","profilepic");
+  img.setAttribute("src", "resources/photo.png");
+  img.setAttribute("align", "left");
+  img.setAttribute("alt", "Profile Photo");
+  const para = document.createElement("p");
+  para.setAttribute("align","left");
+  para.innerHTML = "DvdDuarte is a recently graduated software engineer from University of Minho.<br/> My real name Is David Duarte.<br/> I'm most passion about <span class='bright_green'>web3</span> and <span class='bright_green'>game development</span>.<br/>At the moment I'm learning <span class='bright_green'> Rust</span>. I'm also developing a personal project at the same time.";
+  div.appendChild(img);
+  div.appendChild(para);
+  app.appendChild(div);
 }
 
 function showBanner(){
