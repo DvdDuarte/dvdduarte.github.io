@@ -176,8 +176,8 @@ function createWhoIs(){
   img.setAttribute("align", "left");
   img.setAttribute("alt", "Profile Photo");
   const para = document.createElement("p");
-  para.setAttribute("class","left");
-  // para.setAttribute("class","parawhois");
+  para.setAttribute("align","left");
+  para.setAttribute("class","parawhois");
   para.innerHTML = "DvdDuarte is a recently graduated software engineer from University of Minho.<br/> My real name Is David Duarte.<br/> I'm most passion about <span class='bright_green'>web3</span> and <span class='bright_green'>game development</span>.<br/>At the moment I'm learning <span class='bright_green'> Rust</span>. I'm also developing a personal project at the same time.";
   div.appendChild(img);
   div.appendChild(para);
