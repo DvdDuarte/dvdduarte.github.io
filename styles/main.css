@@ -193,6 +193,7 @@ input:focus{
   width: 100%;
   max-width: 200px;
   height: auto;
+  margin-right: 10px;
 }
 /* .parawhois{
   margin-left: 12%;
