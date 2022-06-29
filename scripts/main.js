@@ -20,12 +20,12 @@ app.addEventListener("click", function(event){
 
 async function open_terminal(){
   createText("Welcome");
-  await delay(700);
+  // await delay(700);
   createText("Starting the server...");
-  await delay(1500);
+  // await delay(1500);
   createText("You can run several commands.");
   createText("Type: <span class='blue'>'help'</span> To get help on the commands");
-  await delay(500);
+  // await delay(500);
   new_line();
 }
 
@@ -115,6 +115,42 @@ async function getInputValue(){
     trueValue(value);
     createUniProjects();
   }
+  else if(value.toLowerCase() === "portfolio -uni 1"){
+    trueValue(value);
+    createUniProject1stYear();
+  }
+  else if(value.toLowerCase() === "portfolio -uni 1 1"){
+    trueValue(value);
+    createUniProject1stYear1stSem();
+  }
+  else if(value.toLowerCase() === "portfolio -uni 1 2"){
+    trueValue(value);
+    createUniProject1stYear2ndSem();
+  }
+  else if(value.toLowerCase() === "portfolio -uni 2"){
+    trueValue(value);
+    createUniProject2ndYear();
+  }
+  else if(value.toLowerCase() === "portfolio -uni 2 1"){
+    trueValue(value);
+    createUniProject2ndYear1stSem();
+  }
+  else if(value.toLowerCase() === "portfolio -uni 2 2"){
+    trueValue(value);
+    createUniProject2ndYear2ndSem();
+  }
+  else if(value.toLowerCase() === "portfolio -uni 3"){
+    trueValue(value);
+    createUniProject3rdYear();
+  }
+  else if(value.toLowerCase() === "portfolio -uni 3 1"){
+    trueValue(value);
+    createUniProject3rdYear1stSem();
+  }
+  else if(value.toLowerCase() === "portfolio -uni 3 2"){
+    trueValue(value);
+    createUniProject3rdYear2ndSem();
+  }
   else if(value.toLowerCase() === "portfolio -personal"){
     trueValue(value);
     createPersonalProjects();
@@ -131,6 +167,7 @@ async function getInputValue(){
     createText("Did you mean: social -a?")
   } 
   else if(value.toLowerCase() === "clear"){
+    document.querySelectorAll("table"). forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("img"). forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
@@ -217,150 +254,497 @@ function createWhoIs(){
 
 function createUniProjects(){
   const div = document.createElement("div");
-  div.innerHTML = `<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/University.md#projects' target='_blank'><i class='fab fa-github'></i> University Projects </a>
-  <p>
-    <h2 id="1st-year">1st Year</h2>
+  div.innerHTML=`
+  <div class="tg-wrap"><table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-j1i3">Subject</th>
+      <th class="tg-j1i3">Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="years">1st Year</td>
+      <td class="years">1st Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 1</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI1">Excite Bike</a></td>
+    </tr>
+    <tr>
+      <td class="years">1st Year</td>
+      <td class="years">2nd Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 2</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI2">Rastros</a></td>
+    </tr>
+    <tr>
+      <td class="years">2nd Year</td>
+      <td class="years">1st Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Data Communication</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-SHAFA-CD-20-21">Shafa</a></td>
+    </tr>
+    <tr>
+      <td class="years">2nd Year</td>
+      <td class="years">2nd Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Calculation of Programs 20-21</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-CP-20-21">Algebra</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 3 20-21</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI3">Recommendations Management System</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Object Oriented Programming</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-POO-20-21">Football Manager</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Operating Systems</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-SO-20-21">Audio Transformer</a></td>
+    </tr>
+    <tr>
+      <td class="years">3rd Year</td>
+      <td class="years">1st Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Communications</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-CC-21-22">Folder Fast Sync</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Calculation of Programs 21-22</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-CP-2021-2022">Hash &amp; Merkel Trees</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Software Systems Development</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-DSS-21-22">Management System for Electronic Equipment Repair Centers</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Artificial Intelligence</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-IA-21-22">Green Distribution</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 3 21-22</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI3-21-22">Repository Management System</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 4</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Where2Go">Where2Go &amp; WayPhinder</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Distributed Systems</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-SD-21-22">Flight Booking System</a></td>
+    </tr>
+    <tr>
+      <td class="years">3rd Year</td>
+      <td class="years">2nd Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Smart Learning and Development</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-ADI-21-22">Machine Learning</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Graphics</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-CG-21-22">OpenGL 3d Engine &amp; Generator</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Operational investigation</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-IO-21-22">Euclidean Distances &amp; Time Cost Matrices</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Language Processing</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-PL-21-22">csv2json &amp; LL(1) Recursive Descent Parser</a></td>
+    </tr>
+  </tbody>
+  </table></div>
+  <p>You can use <span class='blue'>'portfolio -uni YEAR'</span> to see only the projects of that year
+  and </br> <span class='blue'>'portfolio -uni YEAR SEMESTER'</span> to see only the projects of that specific year and semester.
+  </br> <span class="aquamarine">YEAR/SEMESTER</span> Year and semester are both numbers.
   </p>
-  <table>
-    <thead>
-      <tr>
-        <th style="text-align:center" class="bright_green">1st semester</th>
-        <th style="text-align:left" class="pinkish_purple">Project</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> LI1</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-LI1">Excite Bike</a></td>
-      </tr>
-    </tbody>
-  </table>
-  <table>
-    <thead>
-        <tr>
-        <th style="text-align:center" class="bright_green">2nd semester</th>
-        <th style="text-align:left" class="pinkish_purple">Project</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td style="text-align:center" class="paradise_sky"> LI2</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-LI2">Rastros</a></td>
-        </tr>
-    </tbody>
-  </table>
-  <p>
-    <h2 id="2nd-year">2nd Year</h2>
-  </p>
-  <table>
-    <thead>
-      <tr>
-        <th style="text-align:center" class="bright_green">1st semester</th>
-        <th style="text-align:left" class="pinkish_purple">Project</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> CD</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-SHAFA-CD-20-21">Shafa</a></td>
-      </tr>
-    </tbody>
-  </table>
-  <table>
-    <thead>
-      <tr>
-        <th style="text-align:center" class="bright_green">2nd semester</th>
-        <th style="text-align:left" class="pinkish_purple">Project</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> CP 20-21</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-CP-20-21">Algebra</a></td>
-      </tr>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> LI3 20-21</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-LI3">Recommendations Management System</a></td>
-      </tr>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> POO</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-POO-20-21">Football Manager</a></td>
-      </tr>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> SO</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-SO-20-21">Audio Transformer</a></td>
-      </tr>
-    </tbody>
-  </table>
-  <p>
-    <h2 id="3rd-year">3rd Year</h2>
-  </p>
-  <table>
-    <thead>
-      <tr>
-        <th style="text-align:center" class="bright_green">1st semester</th>
-        <th style="text-align:left" class="pinkish_purple">Project</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> CC</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-CC-21-22">Folder Fast Sync</a></td>
-      </tr>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> CP 21-11</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-CP-2021-2022">Hash & Merkel Trees</a></td>
-      </tr>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> DSS</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-DSS-21-22">Management System for Electronic Equipment Repair Centers</a></td>
-      </tr>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> IA</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-IA-21-22">Green Distribution</a></td>
-      </tr>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> LI3 21-22</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-LI3-21-22">Repository Management System</a></td>
-      </tr>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> LI4</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Where2Go">Where2Go & WayPhinder</a></td>
-      </tr>
-      <tr>
-        <td style="text-align:center" class="paradise_sky"> SD</td>
-        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-SD-21-22">Flight booking system</a></td>
-      </tr>
-    </tbody>
-  </table>
-  <table>
-      <thead>
-        <tr>
-          <th style="text-align:center" class="bright_green">2nd semester</th>
-          <th style="text-align:left" class="pinkish_purple">Project</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align:center" class="paradise_sky"> ADI</td>
-          <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-ADI-21-22">Machine Learning</a></td>
-        </tr>
-        <tr>
-          <td style="text-align:center" class="paradise_sky"> CG</td>
-          <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-CG-21-22">OpenGL 3d Engine & Generator</a></td>
-        </tr>
-        <tr>
-          <td style="text-align:center" class="paradise_sky"> IO</td>
-          <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-IO-21-22">Euclidean distances & time cost matrices</a></td>
-        </tr>
-        <tr>
-          <td style="text-align:center" class="paradise_sky"> PL</td>
-          <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-PL-21-22">csv2json & LL(1) Recursive Descent Parser</a></td>
-        </tr>
-      </tbody>
-    </table>
   `
+  app.appendChild(div);
+}
 
+function createUniProject1stYear(){
+  const div = document.createElement("div");
+  div.innerHTML=`
+  <div class="tg-wrap"><table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-j1i3">Subject</th>
+      <th class="tg-j1i3">Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="years">1st Year</td>
+      <td class="years">1st Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 1</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI1">Excite Bike</a></td>
+    </tr>
+    <tr>
+      <td class="years">1st Year</td>
+      <td class="years">2nd Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 2</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI2">Rastros</a></td>
+    </tr>
+  </tbody>
+  </table></div>
+  <p>You can use <span class='blue'>'portfolio -uni YEAR'</span> to see only the projects of that year
+  and </br> <span class='blue'>'portfolio -uni YEAR SEMESTER'</span> to see only the projects of that specific year and semester.
+  </br> <span class="aquamarine">YEAR/SEMESTER</span> Year and semester are both numbers.
+  </p>
+  `
+  app.appendChild(div);
+}
+
+function createUniProject1stYear1stSem(){
+  const div = document.createElement("div");
+  div.innerHTML=`
+  <div class="tg-wrap"><table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-j1i3">Subject</th>
+      <th class="tg-j1i3">Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="years">1st Year</td>
+      <td class="years">1st Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 1</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI1">Excite Bike</a></td>
+    </tr>
+  </tbody>
+  </table></div>
+  <p>You can use <span class='blue'>'portfolio -uni YEAR'</span> to see only the projects of that year
+  and </br> <span class='blue'>'portfolio -uni YEAR SEMESTER'</span> to see only the projects of that specific year and semester.
+  </br> <span class="aquamarine">YEAR/SEMESTER</span> Year and semester are both numbers.
+  </p>
+  `
+  app.appendChild(div);
+}
+
+function createUniProject1stYear2ndSem(){
+  const div = document.createElement("div");
+  div.innerHTML=`
+  <div class="tg-wrap"><table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-j1i3">Subject</th>
+      <th class="tg-j1i3">Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="years">1st Year</td>
+      <td class="years">2nd Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 2</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI2">Rastros</a></td>
+    </tr>
+  </tbody>
+  </table></div>
+  <p>You can use <span class='blue'>'portfolio -uni YEAR'</span> to see only the projects of that year
+  and </br> <span class='blue'>'portfolio -uni YEAR SEMESTER'</span> to see only the projects of that specific year and semester.
+  </br> <span class="aquamarine">YEAR/SEMESTER</span> Year and semester are both numbers.
+  </p>
+  `
+  app.appendChild(div);
+}
+
+function createUniProject2ndYear(){
+  const div = document.createElement("div");
+  div.innerHTML=`
+  <div class="tg-wrap"><table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-j1i3">Subject</th>
+      <th class="tg-j1i3">Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="years">2nd Year</td>
+      <td class="years">1st Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Data Communication</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-SHAFA-CD-20-21">Shafa</a></td>
+    </tr>
+    <tr>
+      <td class="years">2nd Year</td>
+      <td class="years">2nd Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Calculation of Programs 20-21</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-CP-20-21">Algebra</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 3 20-21</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI3">Recommendations Management System</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Object Oriented Programming</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-POO-20-21">Football Manager</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Operating Systems</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-SO-20-21">Audio Transformer</a></td>
+    </tr>
+  </tbody>
+  </table></div>
+  <p>You can use <span class='blue'>'portfolio -uni YEAR'</span> to see only the projects of that year
+  and </br> <span class='blue'>'portfolio -uni YEAR SEMESTER'</span> to see only the projects of that specific year and semester.
+  </br> <span class="aquamarine">YEAR/SEMESTER</span> Year and semester are both numbers.
+  </p>
+  `
+  app.appendChild(div);
+}
+
+function createUniProject2ndYear1stSem(){
+  const div = document.createElement("div");
+  div.innerHTML=`
+  <div class="tg-wrap"><table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-j1i3">Subject</th>
+      <th class="tg-j1i3">Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="years">2nd Year</td>
+      <td class="years">1st Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Data Communication</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-SHAFA-CD-20-21">Shafa</a></td>
+    </tr>
+  </tbody>
+  </table></div>
+  <p>You can use <span class='blue'>'portfolio -uni YEAR'</span> to see only the projects of that year
+  and </br> <span class='blue'>'portfolio -uni YEAR SEMESTER'</span> to see only the projects of that specific year and semester.
+  </br> <span class="aquamarine">YEAR/SEMESTER</span> Year and semester are both numbers.
+  </p>
+  `
+  app.appendChild(div);
+}
+
+function createUniProject2ndYear2ndSem(){
+  const div = document.createElement("div");
+  div.innerHTML=`
+  <div class="tg-wrap"><table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-j1i3">Subject</th>
+      <th class="tg-j1i3">Project</th>
+    </tr>
+  </thead>
+  <tbody>
+      <td class="years">2nd Year</td>
+      <td class="years">2nd Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Calculation of Programs 20-21</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-CP-20-21">Algebra</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 3 20-21</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI3">Recommendations Management System</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Object Oriented Programming</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-POO-20-21">Football Manager</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Operating Systems</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-SO-20-21">Audio Transformer</a></td>
+    </tr>
+  </tbody>
+  </table></div>
+  <p>You can use <span class='blue'>'portfolio -uni YEAR'</span> to see only the projects of that year
+  and </br> <span class='blue'>'portfolio -uni YEAR SEMESTER'</span> to see only the projects of that specific year and semester.
+  </br> <span class="aquamarine">YEAR/SEMESTER</span> Year and semester are both numbers.
+  </p>
+  `
+  app.appendChild(div);
+}
+
+function createUniProject3rdYear(){
+  const div = document.createElement("div");
+  div.innerHTML=`
+  <div class="tg-wrap"><table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-j1i3">Subject</th>
+      <th class="tg-j1i3">Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="years">3rd Year</td>
+      <td class="years">1st Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Communications</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-CC-21-22">Folder Fast Sync</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Calculation of Programs 21-22</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-CP-2021-2022">Hash &amp; Merkel Trees</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Software Systems Development</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-DSS-21-22">Management System for Electronic Equipment Repair Centers</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Artificial Intelligence</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-IA-21-22">Green Distribution</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 3 21-22</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI3-21-22">Repository Management System</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 4</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Where2Go">Where2Go &amp; WayPhinder</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Distributed Systems</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-SD-21-22">Flight Booking System</a></td>
+    </tr>
+    <tr>
+      <td class="years">3rd Year</td>
+      <td class="years">2nd Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Smart Learning and Development</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-ADI-21-22">Machine Learning</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Graphics</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-CG-21-22">OpenGL 3d Engine &amp; Generator</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Operational investigation</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-IO-21-22">Euclidean Distances &amp; Time Cost Matrices</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Language Processing</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-PL-21-22">csv2json &amp; LL(1) Recursive Descent Parser</a></td>
+    </tr>
+  </tbody>
+  </table></div>
+  <p>You can use <span class='blue'>'portfolio -uni YEAR'</span> to see only the projects of that year
+  and </br> <span class='blue'>'portfolio -uni YEAR SEMESTER'</span> to see only the projects of that specific year and semester.
+  </br> <span class="aquamarine">YEAR/SEMESTER</span> Year and semester are both numbers.
+  </p>
+  `
+  app.appendChild(div);
+}
+
+function createUniProject3rdYear1stSem(){
+  const div = document.createElement("div");
+  div.innerHTML=`
+  <div class="tg-wrap"><table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-j1i3">Subject</th>
+      <th class="tg-j1i3">Project</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="years">3rd Year</td>
+      <td class="years">1st Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Communications</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-CC-21-22">Folder Fast Sync</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Calculation of Programs 21-22</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-CP-2021-2022">Hash &amp; Merkel Trees</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Software Systems Development</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-DSS-21-22">Management System for Electronic Equipment Repair Centers</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Artificial Intelligence</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-IA-21-22">Green Distribution</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 3 21-22</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI3-21-22">Repository Management System</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Labs 4</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Where2Go">Where2Go &amp; WayPhinder</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Distributed Systems</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-SD-21-22">Flight Booking System</a></td>
+    </tr>
+  </tbody>
+  </table></div>
+  <p>You can use <span class='blue'>'portfolio -uni YEAR'</span> to see only the projects of that year
+  and </br> <span class='blue'>'portfolio -uni YEAR SEMESTER'</span> to see only the projects of that specific year and semester.
+  </br> <span class="aquamarine">YEAR/SEMESTER</span> Year and semester are both numbers.
+  </p>
+  `
+  app.appendChild(div);
+}
+
+function createUniProject3rdYear2ndSem(){
+  const div = document.createElement("div");
+  div.innerHTML=`
+  <div class="tg-wrap"><table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-j1i3">Subject</th>
+      <th class="tg-j1i3">Project</th>
+    </tr>
+  </thead>
+  <tbody>
+      <td class="years">3rd Year</td>
+      <td class="years">2nd Semester</td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Smart Learning and Development</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-ADI-21-22">Machine Learning</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Computer Graphics</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-CG-21-22">OpenGL 3d Engine &amp; Generator</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Operational investigation</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-IO-21-22">Euclidean Distances &amp; Time Cost Matrices</a></td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">Language Processing</td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-PL-21-22">csv2json &amp; LL(1) Recursive Descent Parser</a></td>
+    </tr>
+  </tbody>
+  </table></div>
+  <p>You can use <span class='blue'>'portfolio -uni YEAR'</span> to see only the projects of that year
+  and </br> <span class='blue'>'portfolio -uni YEAR SEMESTER'</span> to see only the projects of that specific year and semester.
+  </br> <span class="aquamarine">YEAR/SEMESTER</span> Year and semester are both numbers.
+  </p>
+  `
   app.appendChild(div);
 }
 
