@@ -788,7 +788,7 @@ function printMan(value){
     createImg("resources/MenuPrincipal_excitebike.png","imgProjects","Excitebike Menu Principal");
     createText(`This project is a clone of the NES game Excitebike, it was developed in Haskell. During development, the Haskell Gloss library was used to present an interface for the player.
     This project has a problem in mechanics and physics as it is impossible to walk beyond the first house.
-    </br>Project developed by <a href="https://github.com/DvdDuarte" target='_blank'<u>David Duarte</u></a> and <a href="https://github.com/stellaechild" target='_blank'><u>Maria Cunha</u></a>.`)
+    </br>Project developed by <a href="https://github.com/DvdDuarte" target='_blank'><u>David Duarte</u></a> and <a href="https://github.com/stellaechild" target='_blank'><u>Maria Cunha</u></a>.`)
   }
   else if(value.toLowerCase() === "man rastros") {
     trueValue(value);
