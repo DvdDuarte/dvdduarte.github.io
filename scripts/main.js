@@ -177,6 +177,9 @@ async function getInputValue(){
     trueValue(value);
     createText("<a href='https://www.paypal.com/myaccount/transfer/homepage/preview'><i class='fas fa-money-bill'></i> Donate </a>")
   }
+  else if(value.toLowerCase().includes("man")) {
+    printMan(value);
+  }
   else{
     falseValue(value);
     createText(`command not found: ${value}`)
@@ -226,13 +229,13 @@ function createCode(code, text){
   app.appendChild(p);
 }
 
-function createImg(path){
+function createImg(path, classe, name){
 
   var img = document.createElement("img");
-  img.setAttribute("class","profilepic");
-  img.setAttribute("src",path);
+  img.setAttribute("class", classe);
+  img.setAttribute("src", path);
   img.setAttribute("align","left");
-  img.setAttribute("alt","Profile Photo");
+  img.setAttribute("alt", name);
   app.appendChild(img);
 }
 
@@ -269,7 +272,7 @@ function createUniProjects(){
     </tr>
     <tr>
       <td class="tg-0pky">Computer Labs 1</td>
-      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI1">Excite Bike</a></td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI1">Excitebike</a></td>
     </tr>
     <tr>
       <td class="years">1st Year</td>
@@ -386,7 +389,7 @@ function createUniProject1stYear(){
     </tr>
     <tr>
       <td class="tg-0pky">Computer Labs 1</td>
-      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI1">Excite Bike</a></td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI1">Excitebike</a></td>
     </tr>
     <tr>
       <td class="years">1st Year</td>
@@ -423,7 +426,7 @@ function createUniProject1stYear1stSem(){
     </tr>
     <tr>
       <td class="tg-0pky">Computer Labs 1</td>
-      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI1">Excite Bike</a></td>
+      <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-LI1">Excitebike</a></td>
     </tr>
   </tbody>
   </table></div>
@@ -698,10 +701,7 @@ function createUniProject3rdYear1stSem(){
       <td class="tg-0pky">Distributed Systems</td>
       <td class="tg-0pky"><a href="https://github.com/DvdDuarte/Projeto-SD-21-22">Flight Booking System</a></td>
     </tr>
-  </tbody>
-  </table></div>
-  <p>You can use <span class='blue'>'portfolio -uni YEAR'</span> to see only the projects of that year
-  and </br> <span class='blue'>'portfolio -uni YEAR SEMESTER'</span> to see only the projects of that specific year and semester.
+  </tbody>rastrosue'>'portfolio -uni YEAR SEMESTER'</span> to see only the projects of that specific year and semester.
   </br> <span class="aquamarine">YEAR/SEMESTER</span> Year and semester are both numbers.
   </p>
   `
@@ -779,6 +779,140 @@ function createPersonalProjects(){
   // `
 
   app.appendChild(div);
+}
+
+function printMan(value){
+  if(value.toLowerCase() === "man excitebike") {
+    trueValue(value);
+    createText(`<a href='https://github.com/DvdDuarte/Projeto-LI1' target='_blank'><i class='fab fa-github white'></i> Excitebike</a>`);
+    createImg("resources/MenuPrincipal_excitebike.png","imgProjects","Excitebike Menu Principal");
+    createText(`This project is a clone of the NES game Excitebike, it was developed in Haskell. During development, the Haskell Gloss library was used to present an interface for the player.
+    This project has a problem in mechanics and physics as it is impossible to walk beyond the first house.
+    </br>Project developed by <a href="https://github.com/DvdDuarte" target='_blank'<u>David Duarte</u></a> and <a href="https://github.com/stellaechild" target='_blank'><u>Maria Cunha</u></a>.`)
+  }
+  else if(value.toLowerCase() === "man rastros") {
+    trueValue(value);
+    createText(`<a href='https://github.com/DvdDuarte/Projeto-LI2' target='_blank'><i class='fab fa-github white'></i> Rastros</a>`);
+    createText(`This project is an attempt to bring the Rastros board game to a CLI game, developed in C. The game has some minor bugs. 
+    </br>I developed a bot, however it does the bare minimum, that is, it is very easy to win against it.
+    </br>This project was mainly developed by <a href="https://github.com/DvdDuarte" target='_blank'><u>David Duarte</u></a>. It was also developed by <a href="https://github.com/a82884" target='_blank'><u>Carlos Oliveira</u></a> and <a href="https://github.com/a93236" target='_blank'><u>Rodrigo Guimarães</u></a>.`);
+
+  }
+  else if(value.toLowerCase() === "man shafa") {
+    trueValue(value);
+    createText(`<a href='https://github.com/DvdDuarte/Projeto-SHAFA-CD-20-21' target='_blank'><i class='fab fa-github white'></i> Shafa</a>`);
+    createText(`This project is a file compressor developed in C. Something like WinRar, 7zip among others. This project has a problem in the decompression part, and the compression does not reduce the size of the final file much, which ends up making this project useless at the moment.
+    </br>This project was developed by <a href="https://github.com/DvdDuarte" target='_blank'><u>David Duarte</u></a>, <a href="https://github.com/marshaia" target='_blank'><u>Joana Alves</u></a>, <a href="https://github.com/stellaechild" target='_blank'><u>Maria Cunha</u></a>, <a href="https://github.com/pedroarauj09" target='_blank'><u>Pedro Araújo</u></a>,
+     <a href="https://github.com/rafareas" target='_blank'><u>Rafael Arêas</u></a>, <a href="https://github.com/sdasl03" target='_blank'><u>Samuel Lira</u></a>, <a href="https://github.com/VicShadow" target='_blank'><u>Vicente Moreira</u></a> and <a href="https://github.com/VitorLelis" target='_blank'><u>Vitor Lelis</u>v.`);
+
+  }
+  else if(value.toLowerCase() === "man algebra") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man recommendations management system") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man football manager") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man audio transformer") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man folder fast sync") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man hash & merkel trees") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man management system for eletronic equipment repair centers") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man green distribution") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man repository management system") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man where2go & wayphinder") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man flight booking system") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man machine learning") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man opengl 3d engine & generator") {
+    trueValue(value);
+    createText(``);
+
+  }
+  else if(value.toLowerCase() === "man euclidean distances & time cost matrices") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else if(value.toLowerCase() === "man csv2json & ll(1) recursive descent parser") {
+    trueValue(value);
+    createText(`<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`);
+
+  }
+  else{
+    falseValue(value);
+    createText(`command not found: ${value}`)
+  }
 }
 
 function showBanner(){

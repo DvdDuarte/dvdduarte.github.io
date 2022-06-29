@@ -244,6 +244,13 @@ input:focus {
   margin-right: 10px;
   margin-bottom: 10px;
 }
+.imgProjects{
+  width: 100%;
+  max-width: 25%;
+  height: auto;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
 
 .parawhois {
   max-inline-size: 75%;
