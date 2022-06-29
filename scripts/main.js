@@ -5,8 +5,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 app.addEventListener("keypress", async function(event){
   if(event.key === "Enter"){
     await delay(150);
-   getInputValue();
-   
+    getInputValue();
     removeInput();
     await delay(150);
     new_line();
@@ -21,12 +20,12 @@ app.addEventListener("click", function(event){
 
 async function open_terminal(){
   createText("Welcome");
-  // await delay(700);
+  await delay(700);
   createText("Starting the server...");
-  // await delay(1500);
+  await delay(1500);
   createText("You can run several commands.");
-  createText("Type: <span class='blue'>'help'</span> To see all the commands");
-  // await delay(500);
+  createText("Type: <span class='blue'>'help'</span> To get help on the commands");
+  await delay(500);
   new_line();
 }
 
@@ -61,55 +60,77 @@ async function getInputValue(){
   
   const value = document.querySelector("input").value;
 
-  if(value.toLowerCase() === "help"){
+  if(value.toLowerCase() === "help" || value.toLowerCase() === "help -p1"){
     trueValue(value);
-    createCode("help", "See all the commands");
     createCode("whois", "Who is DvdDuarte?");
+    createCode("education", "My education.");
+    createCode("resume", "My Curriculum Vitæ. In english and in portuguese.");
     createCode("skills", "What are my skills?");
     createCode("languages", "What languages do i know?");
-    createCode("resume", "My Curriculum Vitæ. In english and in portuguese.");
-    createCode("projects", "My github page with my projects. Follow me there!");
-    createCode("social -a", "All my social networks.");
     createCode("clear", "Clean the terminal.");
-  } else if(value.toLowerCase() === "whois"){
+    createCode("help -p2", "See all the commands in the second page");
+  } 
+  else if(value.toLowerCase() === "help -p2"){
+    trueValue(value);
+    createCode("portfolio","All my projects!")
+    createCode("social -a", "All my social networks.");
+    createCode("donate", "Help me donating any sum you wish! :)")
+    // Create more commands here
+  
+  } 
+  else if(value.toLowerCase() === "whois"){
     trueValue(value);
     createWhoIs();
-    // createImg("resources/photo.png");
-    // createText("DvdDuarte is a recently graduated software engineer from University of Minho.")
-    // createText("My real name Is David Duarte. I'm most passion about <span class='bright_green'>web3</span> and <span class='bright_green'>game development</span>.")
-    // createText("At the moment I'm learning <span class='bright_green'> Rust</span>. I'm also developing a personal project at the same time.")
-  } else if(value.toLowerCase() === "skills"){
+  } 
+  else if(value.toLowerCase() === "education"){
+    trueValue(value);
+    createText("Put education here");
+  } 
+  else if(value.toLowerCase() === "resume"){
+    trueValue(value);
+    createText("<a href='https://github.com/DvdDuarte/CV' target='_blank'><i class='fab fa-github white'></i> Curriculum Vitæ</a>")
+  } 
+  else if(value.toLowerCase() === "skills"){
     trueValue(value);
     createCode("Programming","C, C++, Java, Javascript, Python, Rust, Haskell, Prolog");
     createCode("Web Dev", "Html, CSS");
     createCode("Technologies", "Git, Docker, Visual Studio (Code), Intellij, Unix, MySQL, Visual Paradigm, Knime, Matlab, Windows");
     createCode("Technologies from the User Perspective", " Office 365, Google Apps, Windows, Facebook, Instagram");
-  } else if(value.toLowerCase() === "languages"){
+  } 
+  else if(value.toLowerCase() === "languages"){
     trueValue(value);
     createCode("Portuguese","Native Speaker");
     createCode("English", "B1/B2 (self-rated)");
     createCode("Spanish", "A1/A2 (self-rated)");
-  } else if(value.toLowerCase() === "resume"){
+  } 
+  else if(value.toLowerCase() === "portfolio"){
     trueValue(value);
-    createText("<a href='https://github.com/DvdDuarte/CV' target='_blank'><i class='fab fa-github white'></i> Curriculum Vitæ</a>")
-  } else if(value.toLowerCase() === "projects"){
-    trueValue(value);
-    createText("<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/University.md#projects' target='_blank'><i class='fab fa-github white'></i> Github Projects</a>")
-  } else if(value.toLowerCase() === "social -a"){
+    createText("<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/University.md#projects' target='_blank'><i class='fab fa-github'></i> University Projects </a>")
+    createText("<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/Portfolio.md#portfolio' target='_blank'><i class='fa fa-folder-open'></i> Personal Projects </a>")
+    // createText("<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/Portfolio.md#portfolio' target='_blank'><i class='fab fa-book-journal-whills'></i> Personal Projects </a>")
+  }
+  else if(value.toLowerCase() === "social -a"){
     trueValue(value);
     createText("<a href='https://github.com/DvdDuarte' target='_blank'><i class='fab fa-github white'></i> github.com/DvdDuarte</a>");
     createText("<a href='https://www.linkedin.com/in/dvdduarte/' target='_blank'><i class='fab fa-linkedin-in white'></i> linkedin.com/in/dvdduarte</a>");
     createText("<a href='https://www.instagram.com/_dvd_duarte_/' target='_blank'><i class='fab fa-instagram white'></i> instagram.com/_dvd_duarte_</a>");
     createText("<a href='mailto:cdvdfduarte@gmail.com?Subject=[Portfolio] - Entrar em contacto' target='_blank'><i class='fa fa-envelope white'></i> cdvdfduarte@gmail.com</a>");
-  } else if(value.toLowerCase() === "social"){
+  } 
+  else if(value.toLowerCase() === "social"){
     trueValue(value);
     createText("Did you mean: social -a?")
-  } else if(value.toLowerCase() === "clear"){
+  } 
+  else if(value.toLowerCase() === "clear"){
     document.querySelectorAll("img"). forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
     document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
     showBanner();
-  } else{
+  } 
+  else if(value.toLowerCase() === "donate") {
+    trueValue(value);
+    createText("<a href='https://www.paypal.com/myaccount/transfer/homepage/preview'><i class='fa fa-money-bill'></i> Donate </a>")
+  }
+  else{
     falseValue(value);
     createText(`command not found: ${value}`)
   }
@@ -185,7 +206,7 @@ function createWhoIs(){
 }
 
 function showBanner(){
-  createCode("'help'", "To see all the commands");
+  createCode("'help'", "To get help on the commands");
 }
 
 open_terminal();
