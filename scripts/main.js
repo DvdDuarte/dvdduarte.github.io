@@ -73,6 +73,8 @@ async function getInputValue(){
   else if(value.toLowerCase() === "help -p2"){
     trueValue(value);
     createCode("portfolio","All my projects!")
+    createCode("portfolio -uni", "Lists all my university projects");
+    createCode("portfolio -personal", "List all my personal projects at the moment.");
     createCode("social -a", "All my social networks.");
     createCode("donate", "Help me donating any sum you wish! :)")
     // Create more commands here
@@ -105,16 +107,24 @@ async function getInputValue(){
   } 
   else if(value.toLowerCase() === "portfolio"){
     trueValue(value);
+    createText("Type: <span class='blue'>'man NAME'</span> Fill in NAME with the desired project name to see it's description.");
     createText("<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/University.md#projects' target='_blank'><i class='fab fa-github'></i> University Projects </a>")
-    createText("<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/Portfolio.md#portfolio' target='_blank'><i class='fa fa-folder-open'></i> Personal Projects </a>")
-    // createText("<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/Portfolio.md#portfolio' target='_blank'><i class='fab fa-book-journal-whills'></i> Personal Projects </a>")
+    createText("<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/Portfolio.md#portfolio' target='_blank'><i class='fa-regular fa-folder-open'></i> Personal Projects </a>")
+  }
+  else if(value.toLowerCase() === "portfolio -uni"){
+    trueValue(value);
+    createUniProjects();
+  }
+  else if(value.toLowerCase() === "portfolio -personal"){
+    trueValue(value);
+    createPersonalProjects();
   }
   else if(value.toLowerCase() === "social -a"){
     trueValue(value);
     createText("<a href='https://github.com/DvdDuarte' target='_blank'><i class='fab fa-github white'></i> github.com/DvdDuarte</a>");
     createText("<a href='https://www.linkedin.com/in/dvdduarte/' target='_blank'><i class='fab fa-linkedin-in white'></i> linkedin.com/in/dvdduarte</a>");
     createText("<a href='https://www.instagram.com/_dvd_duarte_/' target='_blank'><i class='fab fa-instagram white'></i> instagram.com/_dvd_duarte_</a>");
-    createText("<a href='mailto:cdvdfduarte@gmail.com?Subject=[Portfolio] - Entrar em contacto' target='_blank'><i class='fa fa-envelope white'></i> cdvdfduarte@gmail.com</a>");
+    createText("<a href='mailto:cdvdfduarte@gmail.com?Subject=[Portfolio] - Entrar em contacto' target='_blank'><i class='far fa-envelope'></i> cdvdfduarte@gmail.com</a>");
   } 
   else if(value.toLowerCase() === "social"){
     trueValue(value);
@@ -128,7 +138,7 @@ async function getInputValue(){
   } 
   else if(value.toLowerCase() === "donate") {
     trueValue(value);
-    createText("<a href='https://www.paypal.com/myaccount/transfer/homepage/preview'><i class='fa fa-money-bill'></i> Donate </a>")
+    createText("<a href='https://www.paypal.com/myaccount/transfer/homepage/preview'><i class='fas fa-money-bill'></i> Donate </a>")
   }
   else{
     falseValue(value);
@@ -202,6 +212,188 @@ function createWhoIs(){
   para.innerHTML = "DvdDuarte is a recently graduated software engineer from University of Minho.<br/> My real name Is David Duarte.<br/> I'm most passion about <span class='bright_green'>web3</span> and <span class='bright_green'>game development</span>.<br/>At the moment I'm learning <span class='bright_green'> Rust</span>. I'm also developing a personal project at the same time.";
   div.appendChild(img);
   div.appendChild(para);
+  app.appendChild(div);
+}
+
+function createUniProjects(){
+  const div = document.createElement("div");
+  div.innerHTML = `<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/University.md#projects' target='_blank'><i class='fab fa-github'></i> University Projects </a>
+  <p>
+    <h2 id="1st-year">1st Year</h2>
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:center" class="bright_green">1st semester</th>
+        <th style="text-align:left" class="pinkish_purple">Project</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> LI1</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-LI1">Excite Bike</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+        <tr>
+        <th style="text-align:center" class="bright_green">2nd semester</th>
+        <th style="text-align:left" class="pinkish_purple">Project</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td style="text-align:center" class="paradise_sky"> LI2</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-LI2">Rastros</a></td>
+        </tr>
+    </tbody>
+  </table>
+  <p>
+    <h2 id="2nd-year">2nd Year</h2>
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:center" class="bright_green">1st semester</th>
+        <th style="text-align:left" class="pinkish_purple">Project</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> CD</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-SHAFA-CD-20-21">Shafa</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:center" class="bright_green">2nd semester</th>
+        <th style="text-align:left" class="pinkish_purple">Project</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> CP 20-21</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-CP-20-21">Algebra</a></td>
+      </tr>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> LI3 20-21</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-LI3">Recommendations Management System</a></td>
+      </tr>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> POO</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-POO-20-21">Football Manager</a></td>
+      </tr>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> SO</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-SO-20-21">Audio Transformer</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <h2 id="3rd-year">3rd Year</h2>
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:center" class="bright_green">1st semester</th>
+        <th style="text-align:left" class="pinkish_purple">Project</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> CC</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-CC-21-22">Folder Fast Sync</a></td>
+      </tr>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> CP 21-11</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-CP-2021-2022">Hash & Merkel Trees</a></td>
+      </tr>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> DSS</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-DSS-21-22">Management System for Electronic Equipment Repair Centers</a></td>
+      </tr>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> IA</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-IA-21-22">Green Distribution</a></td>
+      </tr>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> LI3 21-22</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-LI3-21-22">Repository Management System</a></td>
+      </tr>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> LI4</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Where2Go">Where2Go & WayPhinder</a></td>
+      </tr>
+      <tr>
+        <td style="text-align:center" class="paradise_sky"> SD</td>
+        <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-SD-21-22">Flight booking system</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+      <thead>
+        <tr>
+          <th style="text-align:center" class="bright_green">2nd semester</th>
+          <th style="text-align:left" class="pinkish_purple">Project</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center" class="paradise_sky"> ADI</td>
+          <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-ADI-21-22">Machine Learning</a></td>
+        </tr>
+        <tr>
+          <td style="text-align:center" class="paradise_sky"> CG</td>
+          <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-CG-21-22">OpenGL 3d Engine & Generator</a></td>
+        </tr>
+        <tr>
+          <td style="text-align:center" class="paradise_sky"> IO</td>
+          <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-IO-21-22">Euclidean distances & time cost matrices</a></td>
+        </tr>
+        <tr>
+          <td style="text-align:center" class="paradise_sky"> PL</td>
+          <td style="text-align:left"><a href="https://github.com/DvdDuarte/Projeto-PL-21-22">csv2json & LL(1) Recursive Descent Parser</a></td>
+        </tr>
+      </tbody>
+    </table>
+  `
+
+  app.appendChild(div);
+}
+
+function createPersonalProjects(){
+  const div = document.createElement("div");
+  div.innerHTML = 
+  `<h2>
+    <i class="fas fa-tools fa-beat"></i> Under Maintenance <i class="fas fa-tools fa-beat"></i>
+   </h2>`
+  // div.innerHTML = `<a href='https://github.com/DvdDuarte/DvdDuarte/blob/main/Portfolio.md#portfolio' target='_blank'><i class='fa fa-folder-open'></i> Personal Projects </a>
+  // <p>
+  //  <h2 id="2022" class="aquamarine" style="margin-left: 5%">2022</h2>
+  // </p>
+  // <table>
+  //   <thead>
+  //     <tr>
+  //       <th style="text-align:center" class="bright_green">Project</th>
+  //       <th style="text-align:left" class="pinkish_purple">Description</th>
+  //     </tr>
+  //   </thead>
+  //   <tbody>
+  //     <tr>
+  //       <td style="text-align:center"><a href="https://github.com/DvdDuarte/SR240Z" class="paradise_sky">Discord Bot</a></td>
+  //       <td style="text-align:left">A discord bot to moderate servers.</td>
+  //     </tr>
+  //     <tr>
+  //       <td style="text-align:center"><a href="https://github.com/DvdDuarte/webscrapper" class="paradise_sky">Web Scrapper</a></td>
+  //       <td style="text-align:left">A web scrapper in python to scrape .... website.</td>
+  //     </tr>
+  //   </tbody>
+  // </table>
+  // `
+
   app.appendChild(div);
 }
 
